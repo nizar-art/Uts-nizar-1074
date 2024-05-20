@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "f1ac3ddf-50e6-4a37-8d4b-ca8bbd691cdb",
+		"name": "Collection API UTS Pem. Web Framework 20232",
+		"description": "Collection ini digunakan mahasiswa untuk testing API yang akan mahasiswa buat untuk pengerjaan soal UTS (**jangan di otak-atik field body nya**).\n\nKami sebagai dosen pengampu matakuliah akan menggunakan collection API ini untuk memudahkan proses penilaian, sehingga mahasiswa bisa mengetahui berapa nilai UTS yang didapat hanya dengan melakukan pemeriksaan kesesuaian antara API yang dibuat dengan request-response dari collection API ini. Untuk memudahkan penggunaaan collection API serta **SYARAT NILAI** ini ikuti aturan-aturan berikut:\n\n1. **WAJIB HOSTING**, berbayar atau tidak dipersilahkan asalkan pada saat penilaian API dapat berjalan dengan baik. Kegagalan request-response API karena permasalahan hosting diluar tanggung jawab dosen pengampu dan sudah dipastikan dapat nilai 0.\n2. **WAJIB DOMAIN**, boleh menggunakan sub-domain sehingga bisa membeli domain secara kolektif.\n3. Pada collection terdapat beberapa simbol seperti berikut, **yang mana simbol ini harus mahasiswa ganti sesuai dengan API yang mahasiswa buat**:\n    1. **{{baseUrl}}** : nama domain boleh menggunakan http atau https\n    2. **{{jwtToken}}** : token JWT untuk otentikasi dan otorisasi (segmentasi role admin dan user)\n    3. **{{id}}** : id untuk melakukan edit ataupun delete, id: 1, 2, 3, dst\n    4. \"isi kan bla bla bla\" : isi kan inputan sesuai dengan seharusnya (boleh dimodifikasi inputannya untuk cek validasi inputan)\n4. **WAJIB GUNAKAN VALIDASI INPUTAN**\n5. **WAJIB LARAVEL**\n    \n\n**Apa yang harus saya penuhi untuk dapat nilai UTS?**\n\n1. Pengumpulan dan presensi wajib di BOC (ketentuan fakultas tidak bisa kompromi)\n2. Tidak melanggar aturan-aturan diatas\n3. Pengumpulan UTS berupa **link source code project UTS di github/gitlab/bitbucket (public bukan hasil kompresi seperti zip/rar), dan alamat domain**\n4. Melebihi batas waktu pengumpulan dianggap tidak mengikuti UTS\n    \n\n> Merugilah dia yang mencontek dan/atau memberi contekan kepada orang lain. Karena sesungguhnya dia telah membodohi dirinya sendiri serta orang lain.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34034522"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "read",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6Ik5pemFyIHp1bCBJc2xhbWkiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE5ODI3NiwiZXhwIjoxNzE2MjAxODc2fQ.zJhACCwmDmUJPS-sfGW8M3L5nQuqD4fmnt9cuW8Rvhs",
+								"type": "text",
+								"uuid": "95ab52d8-2f9c-4b67-92d3-65ed32f840f3"
+							}
+						],
+						"url": {
+							"raw": "https://uts-nizar.libranation.my.id/api/categories",
+							"protocol": "https",
+							"host": [
+								"uts-nizar",
+								"libranation",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "melihat semua kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywibmFtZSI6Ik5JWkFSIFpVTCBJU0xBTUkgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE5NTM5NywiZXhwIjoxNzE2MTk4OTk3fQ.bIi1CFuIUUl9EEDpymzNGsxkw8Gxum4SOQrKyketllg",
+								"type": "text",
+								"uuid": "f248d112-16c7-4223-bcc1-f500dae98e5d"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mobile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://uts-nizar.libranation.my.id/api/categories",
+							"protocol": "https",
+							"host": [
+								"uts-nizar",
+								"libranation",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "membuat kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywibmFtZSI6Ik5JWkFSIFpVTCBJU0xBTUkgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE5NTM5NywiZXhwIjoxNzE2MTk4OTk3fQ.bIi1CFuIUUl9EEDpymzNGsxkw8Gxum4SOQrKyketllg",
+								"type": "text",
+								"uuid": "61857c44-ebb4-4917-bfc7-2c09566bfa37"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Motor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://uts-nizar.libranation.my.id/api/categories/1",
+							"protocol": "https",
+							"host": [
+								"uts-nizar",
+								"libranation",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"categories",
+								"1"
+							]
+						},
+						"description": "menyunting kategori sesuai id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywibmFtZSI6Ik5JWkFSIFpVTCBJU0xBTUkgVUJQS0FSQVdBTkciLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE5NTM5NywiZXhwIjoxNzE2MTk4OTk3fQ.bIi1CFuIUUl9EEDpymzNGsxkw8Gxum4SOQrKyketllg",
+								"type": "text",
+								"uuid": "e64ab3d2-8c9f-4556-9b62-ddd7a966afba"
+							}
+						],
+						"url": {
+							"raw": "https://uts-nizar.libranation.my.id/api/categories/3",
+							"protocol": "https",
+							"host": [
+								"uts-nizar",
+								"libranation",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"categories",
+								"3"
+							]
+						},
+						"description": "menghapus kategori sesuai dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "kelola kategori produk"
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "read",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwibmFtZSI6Ik5pemFyenVsIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTYyMDAzODMsImV4cCI6MTcxNjIwMzk4M30.7J7He0ND9BNv-7QBKdgreG0PEOh219wgXcx8mFteVAw",
+								"type": "text",
+								"uuid": "08eaa73e-6b5e-4079-81cf-df4cb8764d37"
+							}
+						],
+						"url": {
+							"raw": "https://uts-nizar.libranation.my.id/api/products",
+							"protocol": "https",
+							"host": [
+								"uts-nizar",
+								"libranation",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "melihat semua data produk"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6Ik5pemFyIHp1bCBJc2xhbWkiLCJyb2xlIjoidXNlciIsImlhdCI6MTcxNjE5OTA3OCwiZXhwIjoxNzE2MjAyNjc4fQ.sw3xuEUqdwpakIrMP1fwox78aK_an4zeRlODxPeA9FY",
+								"type": "text",
+								"uuid": "bc33e649-b6b6-4ea6-b4bc-dc35e9d95bd2"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Yamaha ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Yamaha Aerox",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "28000000",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "2097-03-31",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "upload gambar produk",
+									"type": "file",
+									"src": "postman-cloud:///1ef1690d-a6d6-49c0-90a8-52af6fd400e2"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://uts-nizar.libranation.my.id/api/products",
+							"protocol": "https",
+							"host": [
+								"uts-nizar",
+								"libranation",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "membuat data produk baru"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}",
+								"type": "text",
+								"uuid": "966a2c85-3a04-487d-a292-fd72b7bcdba3"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "isi kan nama produk",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "isi kan deskripsi produk",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "isi kan harga produk",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "isi kan nama kategori produk (bukan id nya)",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "isi kan tanggal kadaluarsa produk",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "upload gambar produk",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/products/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{id}}"
+							]
+						},
+						"description": "menyunting data produk sesuai dengan id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwibmFtZSI6Ik5pemFyenVsIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTYyMDAzODMsImV4cCI6MTcxNjIwMzk4M30.7J7He0ND9BNv-7QBKdgreG0PEOh219wgXcx8mFteVAw",
+								"type": "text",
+								"uuid": "343f40dc-7742-4e6f-9949-4cb05e95779a"
+							}
+						],
+						"url": {
+							"raw": "https://uts-nizar.libranation.my.id/api/products/1",
+							"protocol": "https",
+							"host": [
+								"uts-nizar",
+								"libranation",
+								"my",
+								"id"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						},
+						"description": "menghapus data produk dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "mengelola data produk"
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"isi kan nama\",\r\n    \"email\":\"isi kan email\",\r\n    \"password\": \"isi kan password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "registrasi akun"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"nizar@mail.com\",\r\n    \"password\":\"31032004\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uts-nizar.libranation.my.id/api/login",
+					"protocol": "https",
+					"host": [
+						"uts-nizar",
+						"libranation",
+						"my",
+						"id"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register with oauth google",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/oauth/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"oauth",
+						"register"
+					]
+				},
+				"description": "registrasi akun baru menggunakan google oauth (install laravel socialite)"
+			},
+			"response": []
+		}
+	]
+}
